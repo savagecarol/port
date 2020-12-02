@@ -16,6 +16,24 @@
   h6 {
     font-family: "Montserrat", sans-serif
   } */
+  ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
   html {
   scroll-behavior: smooth;
 }
@@ -41,6 +59,14 @@
   @media only screen and (max-width: 600px) {
     #main {
       margin-left: 0
+    }
+    #about {
+      padding-top: 238px;
+    }
+  }
+  @media (min-width: 600px) {
+    #about {
+      color: red;
     }
   }
 </style>
@@ -119,22 +145,20 @@
   <!-- Page Content -->
   <div class="w3-padding-large" id="main">
     <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-white" style="box-sizing: border-box; height: 100vh;" id="home">
-      <div class="w3-row w3-center" style="position: relative;">
+    <header class="w3-container w3-center w3-white" style="box-sizing: border-box; height: 100vh; padding-top: 6%;" id="home">
+      <div class="w3-row w3-center">
         <div class="w3-col s12 m6 l6" style="height: 400px;">
-          <h1 class="w3-jumbo" style="font-family: Montserrat; position: absolute; top: 40%;">Alankar Saxena.</h1>
+          <h1 class="w3-jumbo" style="font-family: Montserrat; padding-top: 20%;">Alankar Saxena.</h1>
+          <h3 class="" style="font-family: Montserrat;">Full Stack Web Developer</h3>
         </div>
         <div class="w3-col s12 m6 l6">
-          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="boy" class="w3-image w3-circle" width="400" height="400">
+          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="boy" class="w3-image w3-circle" width="450" height="450">
         </div>
       </div>
-      <!-- <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Alankar Saxena.</h1>
-      <p>Full Stack Web Developer.</p>
-      <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="boy" class="w3-image" width="992" height="500"> -->
     </header>
 
     <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <div class="w3-content w3-justify w3-padding-32 w3-text-grey" id="about">
       <h2 class="w3-text-dark-grey">About Me</h2>
       <hr style="width:200px" class="w3-opacity">
       <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
