@@ -6,8 +6,9 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <style>
-  /* body,
+	/* body,
   h1,
   h2,
   h3,
@@ -16,54 +17,72 @@
   h6 {
     font-family: "Montserrat", sans-serif
   } */
-  ::-webkit-scrollbar {
-  width: 10px;
-}
+	::-webkit-scrollbar {
+		width: 10px;
+	}
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
-}
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
-  html {
-  scroll-behavior: smooth;
-}
-  h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
-  body {font-family: "Open Sans"}
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: #888;
+	}
 
-  .w3-row-padding img {
-    margin-bottom: 12px
-  }
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: #555;
+	}
 
-  /* Set the width of the sidebar to 120px */
-  .w3-sidebar {
-    width: 120px;
-    background: #222;
-  }
+	html {
+		scroll-behavior: smooth;
+	}
 
-  /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-  #main {
-    margin-left: 120px
-  }
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: "Oswald"
+	}
 
-  /* Remove margins from "page content" on small screens */
-  @media only screen and (max-width: 600px) {
-    #main {
-      margin-left: 0
-    }
-  }
-  .na {
-    border-radius: 0px 10px 10px 0px;
-  }
+	body {
+		font-family: "Open Sans"
+	}
+
+	.w3-row-padding img {
+		margin-bottom: 12px
+	}
+
+	/* Set the width of the sidebar to 120px */
+	.w3-sidebar {
+		width: 120px;
+		background: #222;
+	}
+
+	/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+	#main {
+		margin-left: 120px
+	}
+
+	/* Remove margins from "page content" on small screens */
+	@media only screen and (max-width: 600px) {
+		#main {
+			margin-left: 0
+		}
+	}
+
+	.na {
+		border-radius: 0px 10px 10px 0px;
+	}
+
+	.top-nav,
+	.top-nav:hover {
+		border-radius: 20px;
+	}
 </style>
 
 <body class="w3-white">
@@ -73,568 +92,434 @@
 
 
 
- 
-  <!-- Icon Bar (Sidebar - hidden on small screens) -->
-  <nav class="w3-sidebar w3-border-right w3-bar-block w3-small w3-hide-small w3-white w3-center" style="padding-top: 7%">
-    <!-- Avatar image in top left corner -->
-    <a href="#" class="w3-bar-item na w3-button w3-padding w3-hover-green">
-      <i class="fa fa-home w3-xxlarge"></i>
-      <p>HOME</p>
-    </a>
-    <a href="#about" class="w3-bar-item na w3-button w3-padding w3-hover-red">
-      <i class="fa fa-user w3-xxlarge"></i>
-      <p>ABOUT</p>
-    </a>
-    <a href="#photos" class="w3-bar-item na w3-button w3-padding w3-hover-yellow">
-      <i class="fa fa-eye w3-xxlarge"></i>
-      <p>PORTFOLIO</p>
-    </a>
 
-    <a href="#photos" class="w3-bar-item na w3-button w3-padding w3-hover-pink">
-      <i class="fa fa-eye w3-xxlarge"></i>
-      <p>PROJECT</p>
-    </a>
+	<!-- Icon Bar (Sidebar - hidden on small screens) -->
+	<nav class="w3-sidebar w3-border-right w3-bar-block w3-small w3-hide-small w3-white w3-center" style="padding-top: 3.5%;">
+		<!-- Avatar image in top left corner -->
+		<a href="#" class="w3-bar-item na w3-button w3-padding w3-hover-green">
+			<i class="fa fa-home w3-xxlarge"></i>
+			<p>HOME</p>
+		</a>
+		<a href="#about" class="w3-bar-item na w3-button w3-padding w3-hover-red">
+			<i class="fa fa-user w3-xxlarge"></i>
+			<p>ABOUT</p>
+		</a>
+		<a href="#education" class="w3-bar-item na w3-button w3-padding w3-hover-blue">
+			<i class="fa fa-envelope w3-xxlarge"></i>
+			<p>EDUCATION</p>
+		</a>
+		<a href="#skills" class="w3-bar-item na w3-button w3-padding w3-hover-yellow">
+			<i class="fa fa-eye w3-xxlarge"></i>
+			<p>SKILLS</p>
+		</a>
+		<a href="#work" class="w3-bar-item na w3-button w3-padding w3-hover-pink">
+			<i class="fa fa-eye w3-xxlarge"></i>
+			<p>WORK</p>
+		</a>
+		<a href="#contact" class="w3-bar-item na w3-button w3-padding w3-hover-blue">
+			<i class="fa fa-envelope w3-xxlarge"></i>
+			<p>CONTACT</p>
+		</a>
+
+	</nav>
+
+
+
+
+
+
+	<!-- Navbar on small screens (Hidden on medium and large screens) -->
+	<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+		<div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+			<a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+			<a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+			<a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">SKILLS</a>
+			<a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- Page Content -->
+	<div class="w3-padding-large" id="main">
+		<div class="w3-bar w3-white w3-hide-small w3-row">
+			<div class="w3-container w3-margin-left">
+				<div class="w3-col m1 l1 top-nav w3-hover-yellow">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-yellow" style="padding-left: 45%;"><i
+							class="fa fa-github"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-blue">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-blue " style="padding-left: 45%;"><i
+							class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-red">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-red " style="padding-left: 45%;"><i
+							class="fa fa-instagram"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-yellow">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-yellow " style="padding-left: 45%;"><i
+							class="fa fa-twitter"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-green">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-green " style="padding-left: 40%;"><img
+							src="/asset/dev.png" style="width:20px"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-blue">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-blue " style="padding-left: 40%;"><img
+							src="/asset/devpost.png" style="width:20px"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-red">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-red " style="padding-left: 40%;"><img
+							src="/asset/hk.png" style="width:20px"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-yellow">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-yellow" style="padding-left: 40%;"><img
+							src="/asset/codechef (2).png" style="width:20px"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-green">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-green" style="padding-left: 40%;"><img
+							src="/asset/codeforces.png" style="width:20px"></i></a>
+				</div>
+				<div class="w3-col m1 l1 top-nav w3-hover-aqua">
+					<a href="#" class="w3-bar-item top-nav w3-button w3-hover-aqua" style="padding-left: 40%;"><img
+							src="/asset/discord.png" style="width:20px"></i></a>
+				</div>
+				<a href="#" class=" w3-text-dark-gray w3-bar-item top-nav w3-button w3-hover-pink w3-right"
+					style="font-family: Montserrat;">Resume</a>
+			</div>
+		</div>
+
 
-    <a href="#photos" class="w3-bar-item na w3-button w3-padding w3-hover-orange">
-      <i class="fa fa-eye w3-xxlarge"></i>
-      <p>EXPERIENCE</p>
-    </a>
 
 
-    <a href="#contact" class="w3-bar-item na w3-button w3-padding w3-hover-blue">
-      <i class="fa fa-envelope w3-xxlarge"></i>
-      <p>CONTACT</p>
-    </a>
-  
-  </nav>
 
 
 
 
-
-
-  <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-      <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-      <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-      <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-    </div>
-  </div>
-
-
-
-
-
-
-
-  <!-- Page Content -->
-    <div class="w3-padding-large" id="main">
-        <div class="w3-bar w3-white w3-hide-small w3-row">
-          <div class="w3-container w3-margin-left">
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-yellow"><i class="fa fa-github"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-blue "><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-red "><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-orange"><i class="fa fa-twitter"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-green "><img src="/asset/dev.png" style="width:20px"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-pink "><img src="/asset/devpost.png" style="width:20px"></i></a>
-            </div>
-            <div class="w3-col m1 l1 ">
-              <a href="#" class="w3-bar-item w3-button w3-hover-yellow "><img src="/asset/hk.png" style="width:20px"></i></a>
-            </div>
-
-        <a href="#" class="w3-bar-item w3-button w3-right" style="font-family: Montserrat;">Resume</a>
-
-               </div>
-             </div>
-    
-
-
-
-             
-
-
-
-    <!-- Header/Home -->
-    <header class="w3-container w3-center w3-white" style="box-sizing: border-box; height: 100vh; padding-top: 6%;" id="home">
-      <div class="w3-row w3-center">
-        <div class="w3-col s12 m6 l6" style="height: 400px;">
-          <h1 class="w3-jumbo" style="font-family: Montserrat; padding-top: 20%;">Alankar Saxena.</h1>
-          <h3 class="" style="font-family: Montserrat;">Full Stack Web Developer</h3>
-        </div>
-        <div class="w3-col s12 m6 l6">
-          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="boy" class="w3-image w3-circle" width="450" height="450">
-        </div>
-      </div>
-    </header>
-
-
-
-
-
-
-
-
-
-    <!-- About Section -->
-    <div class="w3-content w3-justify  w3-text-grey" id="about">
-      <h2 class="w3-text-black w3-padding-16" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">About Me</h2>
-      <hr style="width:200px" class="w3-opacity">
-      <p   style="font-family: Montserrat; font-weight: 500; font-size: medium">Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip
-        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-        id est laborum consectetur
-        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-
-      <h3 class="w3-padding-16 w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;" >Tags</h3>
-
-
-
-
-
-
-
-           
-             
-                <p>
-  <button class="w3-button w3-black w3-round">Black</button>
-<button class="w3-button w3-khaki w3-round">Khaki</button>
-<button class="w3-button w3-yellow w3-round">Yellow</button>
-<button class="w3-button w3-red w3-round">Red</button>
-<button class="w3-button w3-purple w3-round">Purple</button>
-
-
-
-<button class="w3-button w3-black w3-round">Black</button>
-<button class="w3-button w3-khaki w3-round">Khaki</button>
-<button class="w3-button w3-yellow w3-round">Yellow</button>
-<button class="w3-button w3-red w3-round">Red</button>
-<button class="w3-button w3-purple w3-round">Purple</button>
-
-
-
-<button class="w3-button w3-black w3-round">Black</button>
-<button class="w3-button w3-khaki w3-round">Khaki</button>
-<button class="w3-button w3-yellow w3-round">Yellow</button>
-<button class="w3-button w3-red w3-round">Red</button>
-<button class="w3-button w3-purple w3-round">Purple</button>
-
-
-          
-                  
-                </p>
-       
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <h3 class="w3-padding-16 w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;" >My Skills</h3>
-      <br>
-
-      <p class="w3-wide w3-text-black"  style="font-family: Montserrat; font-weight: 600; font-size: small;"     >Python</p>
-      <div class="w3-light-gray w3-round-xxlarge">
-        <div class="w3-yellow w3-round-xxlarge" style="height:14px;width:55%"></div>
-      </div>
-
-      <p class="w3-wide w3-text-black"  style="font-family: Montserrat; font-weight: 600; font-size: small;"     >Python</p>
-      <div class="w3-light-gray w3-round-xxlarge">
-        <div class="w3-blue w3-round-xxlarge" style="height:14px;width:55%"></div>
-      </div>
-
-
-      <p class="w3-wide w3-text-black"  style="font-family: Montserrat; font-weight: 600; font-size: small;"     >dsffds</p>
-      <div class="w3-light-gray w3-round-xxlarge">
-        <div class="w3-green w3-round-xxlarge" style="height:14px;width:55%"></div>
-      </div>
-
-
-      <p class="w3-wide w3-text-black"  style="font-family: Montserrat; font-weight: 600; font-size: small;"     >dfdf</p>
-      <div class="w3-light-gray w3-round-xxlarge">
-        <div class="w3-blue w3-round-xxlarge" style="height:14px;width:55%"></div>
-      </div>
-
-
-      <p class="w3-wide w3-text-black"  style="font-family: Montserrat; font-weight: 600; font-size: small;"     >dsfnfd</p>
-      <div class="w3-light-gray w3-round-xxlarge">
-        <div class="w3-red w3-round-xxlarge" style="height:14px;width:55%"></div>
-      </div>
-
-
-     
-      
-      
-      <br>
-      <br>
-
-
-      <div class="w3-padding-64 w3-content" id="photos">
-        <h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">Education</h2>
-        <hr style="width:200px" class="w3-opacity">
-
-
-        <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" > * Bachelors In Computer Science </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > ABES Engineering College </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > 2018-2022</h2>
-
-        <br>
-        <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" >* Bachelors In Computer Science </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > ABES Engineering College </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > 2018-2022</h2>
-    
-        <br>
-
-        <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" >* Bachelors In Computer Science </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > ABES Engineering College </h2>
-        <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > 2018-2022</h2>
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <div class="w3-padding-64 w3-content" id="photos">
-        <h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">Projects</h2>
-        <hr style="width:200px" class="w3-opacity">
-
-
-        <div class="w3-row-padding">
-
-          <div class="w3-col s12 m4 l4">
-            <div class="w3-white w3-margin">
-              <div class="w3-container w3-padding w3-white">
-                  <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                  <div class="card">
-                      <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                    
-                    </div>
-                  </a>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="w3-col s12 m4 l4">
-              <div class="w3-white w3-margin">
-                <div class="w3-container w3-padding w3-white">
-                    <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                    <div class="card">
-                        <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                      
-                      </div>
-                    </a>
-                </div>
-              </div>
-            </div>
-
-            
-            <div class="w3-col s12 m4 l4">
-              <div class="w3-white w3-margin">
-                <div class="w3-container w3-padding w3-white">
-                    <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                    <div class="card">
-                        <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                      
-                      </div>
-                    </a>
-                </div>
-              </div>
-            </div>
-
-        
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="w3-padding-64 w3-content" id="photos">
-            <h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">Experience</h2>
-            <hr style="width:200px" class="w3-opacity">
-
-
-
-
-            <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" > * Edulicious </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > Teacher </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  >  A teaching organization thadttrnfdflkdflkmffdkffdklmfdlgmfdlgmfg;lfdg,;lfd,g;fdgfd;gfd;g,g</h2>
-    
-            <br>
-            <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" >* Bachelors In Computer Science </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > ABES Engineering College </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > 2018-2022</h2>
-        
-            <br>
-    
-            <h2 class="w3-text-black  "  style="font-family: Montserrat; font-weight: 600; font-size: medium;" >* Bachelors In Computer Science </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > ABES Engineering College </h2>
-            <h2 class="w3-text-gray "  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > 2018-2022</h2>
-      
-            <br>
-
-
-
-
-            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-                <div class="w3-quarter w3-section">
-                  <span class="w3-xlarge">11+</span><br>
-                  Partners
-                </div>
-                <div class="w3-quarter w3-section">
-                  <span class="w3-xlarge">55+</span><br>
-                  Projects Done
-                </div>
-                <div class="w3-quarter w3-section">
-                  <span class="w3-xlarge">89+</span><br>
-                  Happy Clients
-                </div>
-                <div class="w3-quarter w3-section">
-                  <span class="w3-xlarge">150+</span><br>
-                  Meetings
-                </div>
-              </div>
-        
-
-
-
-
-
-
-
-
-
-
-            <div class="w3-padding-64 w3-content" id="photos">
-                <h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">Ceritficates</h2>
-                <hr style="width:200px" class="w3-opacity">
-
-
-
-
-
-
-                
-          <div class="w3-row-padding">
-
-            <div class="w3-col s12 m4 l4">
-              <div class="w3-white w3-margin">
-                <div class="w3-container w3-padding w3-white">
-                    <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                    <div class="card">
-                        <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                      
-                      </div>
-                    </a>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="w3-col s12 m4 l4">
-                <div class="w3-white w3-margin">
-                  <div class="w3-container w3-padding w3-white">
-                      <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                      <div class="card">
-                          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                        
-                        </div>
-                      </a>
-                  </div>
-                </div>
-              </div>
-
-              
-              <div class="w3-col s12 m4 l4">
-                <div class="w3-white w3-margin">
-                  <div class="w3-container w3-padding w3-white">
-                      <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                      <div class="card">
-                          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                        
-                        </div>
-                      </a>
-                  </div>
-                </div>
-              </div>
-  
-          
-          </div>
-
-
-
-
-
-          <div class="w3-row-padding">
-
-            <div class="w3-col s12 m4 l4">
-              <div class="w3-white w3-margin">
-                <div class="w3-container w3-padding w3-white">
-                    <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                    <div class="card">
-                        <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                      
-                      </div>
-                    </a>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="w3-col s12 m4 l4">
-                <div class="w3-white w3-margin">
-                  <div class="w3-container w3-padding w3-white">
-                      <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                      <div class="card">
-                          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                        
-                        </div>
-                      </a>
-                  </div>
-                </div>
-              </div>
-
-              
-              <div class="w3-col s12 m4 l4">
-                <div class="w3-white w3-margin">
-                  <div class="w3-container w3-padding w3-white">
-                      <a href="#" class="w3-bar-item w3-button w3-hover-yellow">
-                      <div class="card">
-                          <img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="Avatar" style="width:100%">
-                        
-                        </div>
-                      </a>
-                  </div>
-                </div>
-              </div>
-  
-          
-          </div>
-
-
-
-  
-
-
-
-
-
-
-
-    </div>
-
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;" >Contact Me</h2>
-      <hr style="width:200px" class="w3-opacity">
-      <p style="font-family: Montserrat;">Let's get in touch. Send me a message:</p>
-      <form action="/action_page.php" target="_blank">
-
-        <p><input class="w3-input w3-padding-16 w3-light-gray" type="text" placeholder="Name" required name="Name" style="font-family: Montserrat;"  ></p>
-        <p><input class="w3-input w3-padding-16 w3-light-gray " type="text" placeholder="Email" required name="Email" style="font-family: Montserrat;" ></p>
-        <p><input class="w3-input w3-padding-16 w3-light-gray" type="text" placeholder="Subject" required name="Subject" style="font-family: Montserrat;" ></p>
-        <p><input class="w3-input w3-padding-16 w3-light-gray" type="text" placeholder="Message" required name="Message" style="font-family: Montserrat;" ></p>
-        <p>
-            <p><button class="w3-button w3-yellow w3-block" style="font-family: Montserrat; font-weight: 600; font-size: medium;"  type="submit">SEND MESSAGE</button></p>
-          <!-- <button class="w3-button w3-yellow w3-padding-large" type="submit"> -->
-            <!-- <i class="fa fa-paper-plane"></i> SEND MESSAGE -->
-          </button>
-        </p>
-      </form>
-  </div>
-
-
-
-
-
-
-
-
-    <h2 class="w3-text-gray w3-center"  style="font-family: Montserrat; font-weight: 600; font-size: medium;" > Lets Talk </h2>
-    <h2 class="w3-text-gray w3-center"  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > Want to Connect? </h2>
-    <h2 class="w3-text-gray w3-center"  style="font-family: Montserrat; font-weight: 600; font-size: medium;"  > My inbox is always open </h2>
-
-
-
-    
-        <div class="w3-bar w3-white w3-hide-small w3-row  ">
-          <div class="w3-container w3-center">
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-yellow"><i class="fa fa-github"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-blue "><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-red "><i class="fa fa-instagram"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-yellow "><i class="fa fa-twitter"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-green "><img src="/asset/dev.png" style="width:20px"></i></a>
-            </div>
-            <div class="w3-col m1 l1">
-              <a href="#" class="w3-bar-item w3-button w3-hover-blue "><img src="/asset/devpost.png" style="width:20px"></i></a>
-            </div>
-            <div class="w3-col m1 l1 ">
-              <a href="#" class="w3-bar-item w3-button w3-hover-red "><img src="/asset/hk.png" style="width:20px"></i></a>
-            </div>
-
-               </div>
-             </div>
-    
-
- 
-
-
-
-
+		<!-- Header/Home -->
+		<header class="w3-container w3-center w3-white" style="box-sizing: border-box; height: 100vh; padding-top: 6%;"
+			id="home">
+			<div class="w3-row w3-center">
+				<div class="w3-col s12 m6 l6" style="height: 400px;">
+					<h1 class="w3-jumbo" style="font-family: Montserrat; padding-top: 20%;">Alankar Saxena.</h1>
+					<h3 class="" style="font-family: Montserrat;">Full Stack Web Developer</h3>
+				</div>
+				<div class="w3-col s12 m6 l6">
+					<img src="http://edulicious.herokuapp.com/static/pp.jpg" alt="boy" class="w3-image w3-circle"
+						width="450" height="450">
+				</div>
+			</div>
+		</header>
+
+
+
+
+
+
+
+
+
+		<!-- About Section -->
+		<div class="w3-content w3-justify  w3-text-grey" id="about">
+			<h2 class="w3-text-black w3-padding-16"
+				style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+				About Me</h2>
+			<hr style="width:200px" class="w3-opacity">
+			<p style="font-family: Montserrat; font-weight: 500; font-size: medium">Some text about me. Some text about
+				me. I
+				am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
+				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+				laboris
+				nisi ut aliquip
+				ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+				fugiat
+				nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+				mollit anim
+				id est laborum consectetur
+				adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+				veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			</p>
+
+
+
+
+			<h3 class="w3-padding-64 w3-text-black"
+				style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+				Tags
+			</h3>
+			<div class="w3-container">
+				<div class="w3-row">
+					<div class="w3-col s12 m12 l12">
+						<p>
+							<button class="w3-button w3-black w3-round"
+								style="margin: 5px; margin-left: 0;">Black</button>
+							<button class="w3-button w3-khaki w3-round"
+								style="margin: 5px; margin-left: 0;">Khaki</button>
+							<button class="w3-button w3-yellow w3-round"
+								style="margin: 5px; margin-left: 0;">Yellow</button>
+							<button class="w3-button w3-red w3-round" style="margin: 5px; margin-left: 0;">Red</button>
+							<button class="w3-button w3-purple w3-round"
+								style="margin: 5px; margin-left: 0;">Purple</button>
+
+							<button class="w3-button w3-black w3-round"
+								style="margin: 5px; margin-left: 0;">Black</button>
+							<button class="w3-button w3-khaki w3-round"
+								style="margin: 5px; margin-left: 0;">Khaki</button>
+							<button class="w3-button w3-yellow w3-round"
+								style="margin: 5px; margin-left: 0;">Yellow</button>
+							<button class="w3-button w3-red w3-round" style="margin: 5px; margin-left: 0;">Red</button>
+							<button class="w3-button w3-purple w3-round"
+								style="margin: 5px; margin-left: 0;">Purple</button>
+
+							<button class="w3-button w3-black w3-round"
+								style="margin: 5px; margin-left: 0;">Black</button>
+							<button class="w3-button w3-khaki w3-round"
+								style="margin: 5px; margin-left: 0;">Khaki</button>
+							<button class="w3-button w3-yellow w3-round"
+								style="margin: 5px; margin-left: 0;">Yellow</button>
+							<button class="w3-button w3-red w3-round" style="margin: 5px; margin-left: 0;">Red</button>
+							<button class="w3-button w3-purple w3-round"
+								style="margin: 5px; margin-left: 0;">Purple</button>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="w3-padding-64 w3-content" id="education">
+				<h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+					Education</h2>
+				<hr style="width:200px" class="w3-opacity">
+
+				<ul>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+				</ul>
+			</div>
+
+
+
+			<h3 class="w3-padding-64 w3-text-black" id="skills" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+				My Skills
+			</h3>
+			<br>
+
+			<p class="w3-wide w3-text-black" style="font-family: Montserrat; font-weight: 600; font-size: small;">Python
+			</p>
+			<div class="w3-light-gray w3-round-xxlarge">
+				<div class="w3-yellow w3-round-xxlarge" style="height:14px;width:55%"></div>
+			</div>
+
+			<p class="w3-wide w3-text-black" style="font-family: Montserrat; font-weight: 600; font-size: small;">Python
+			</p>
+			<div class="w3-light-gray w3-round-xxlarge">
+				<div class="w3-blue w3-round-xxlarge" style="height:14px;width:55%"></div>
+			</div>
+
+
+			<p class="w3-wide w3-text-black" style="font-family: Montserrat; font-weight: 600; font-size: small;">dsffds
+			</p>
+			<div class="w3-light-gray w3-round-xxlarge">
+				<div class="w3-green w3-round-xxlarge" style="height:14px;width:55%"></div>
+			</div>
+
+
+			<p class="w3-wide w3-text-black" style="font-family: Montserrat; font-weight: 600; font-size: small;">dfdf
+			</p>
+			<div class="w3-light-gray w3-round-xxlarge">
+				<div class="w3-blue w3-round-xxlarge" style="height:14px;width:55%"></div>
+			</div>
+
+
+			<p class="w3-wide w3-text-black" style="font-family: Montserrat; font-weight: 600; font-size: small;">dsfnfd
+			</p>
+			<div class="w3-light-gray w3-round-xxlarge">
+				<div class="w3-red w3-round-xxlarge" style="height:14px;width:55%"></div>
+			</div>
+
+
+			
+
+			<div class="w3-padding-64 w3-content" id="work">
+				<h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+					Experience
+				</h2>
+				<hr style="width:200px" class="w3-opacity">
+
+				<ul>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+					<li class="w3-padding-8">
+						<h2 class="w3-text-black  " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							Bachelors In Computer Science
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							ABES Engineering College
+						</h2>
+						<h2 class="w3-text-gray " style="font-family: Montserrat; font-weight: 600; font-size: medium;">
+							2018-2022
+						</h2>
+					</li>
+				</ul>
+			</div>
+
+
+
+				<h2 class="w3-text-black w3-padding-16" id='project'
+					style="font-family: Montserrat; font-weight: 700; font-size: xx-large;"> Projects
+				</h2>
+				<hr style="width:200px" class="w3-opacity">
+
+				<div class="w3-row-padding">
+					<div class="w3-col s12 m6 l4">
+						<div class="w3-white w3-margin">
+							<div class="w3-container w3-padding w3-white">
+								<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+							</div>
+						</div>
+					</div>
+					<div class="w3-col s12 m6 l4">
+						<div class="w3-white w3-margin">
+							<div class="w3-container w3-padding w3-white">
+								<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+							</div>
+						</div>
+					</div>
+					<div class="w3-col s12 m6 l4">
+						<div class="w3-white w3-margin">
+							<div class="w3-container w3-padding w3-white">
+								<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+					<div class="w3-padding-64 w3-content" id="photos">
+						<h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+							Ceritficates
+						</h2>
+						<hr style="width:200px" class="w3-opacity">
+						<div class="w3-row-padding">
+							<div class="w3-col s12 m6 l4">
+								<div class="w3-white w3-margin">
+									<div class="w3-container w3-padding w3-white">
+										<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+									</div>
+								</div>
+							</div>
+							<div class="w3-col s12 m6 l4">
+								<div class="w3-white w3-margin">
+									<div class="w3-container w3-padding w3-white">
+										<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+									</div>
+								</div>
+							</div>
+							<div class="w3-col s12 m6 l4">
+								<div class="w3-white w3-margin">
+									<div class="w3-container w3-padding w3-white">
+										<img src="http://edulicious.herokuapp.com/static/pp.jpg" class="w3-image w3-hover-opacity" alt="Avatar" style="width:100%">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				<div class="w3-padding-32 w3-content w3-text-grey" id="contact">
+					<h2 class="w3-text-black" style="font-family: Montserrat; font-weight: 700; font-size: xx-large;">
+						Contact Me
+					</h2>
+					<hr style="width:200px" class="w3-opacity">
+					<p style="font-family: Montserrat;">Let's get in touch. Send me a message:</p>
+					<script>
+						function sendEmail() { 
+							Email.send({ 
+								Host: "smtp.gmail.com", 
+								Username: "", 
+								Password: "", 
+								To: 'saxenaalankar42@gmail.com', 
+								From: document.querySelector('#email'), 
+								Subject: document.querySelector('#subject'), 
+								Body: document.querySelector('#message'), 
+							}).then(function (message) { 
+								alert("mail sent successfully") 
+							});
+						} 
+					</script>
+					<form method="POST">
+
+						<p><input class="w3-input w3-padding-16 w3-light-gray" type="text" placeholder="Name" required
+								name="Name" style="font-family: Montserrat;"></p>
+						<p><input class="w3-input w3-padding-16 w3-light-gray " type="text" id="email" placeholder="Email" required
+								name="Email" style="font-family: Montserrat;"></p>
+						<p><input class="w3-input w3-padding-16 w3-light-gray" type="text" id="subject" placeholder="Subject"
+								required name="Subject" style="font-family: Montserrat;"></p>
+						<p><input class="w3-input w3-padding-16 w3-light-gray" type="text" id="message" placeholder="Message"
+								required name="Message" style="font-family: Montserrat;"></p>
+						<p>
+						<p><button class="w3-button w3-yellow w3-block"
+								style="font-family: Montserrat; font-weight: 600; font-size: medium;" onclick="sendEmail()" >SEND
+								MESSAGE</button></p>
+						</button>
+						</p>
+					</form>
+				</div>
 
 
 </body>
