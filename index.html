@@ -64,64 +64,30 @@
       padding-top: 238px;
     }
   }
-  @media (min-width: 600px) {
-    #about {
-      color: red;
-    }
-  }
 </style>
 
 <body class="w3-white">
-  <div class="container">
-
-    <div class="w3-bar w3-white w3-hide-small w3-row">
-      <div class="w3-container w3-margin-left">
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><i class="fa fa-github"></i></a>
-        </div>
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
-        </div>
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
-        </div>
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
-        </div>
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><img src="/asset/dev.png" style="width:20px"></i></a>
-        </div>
-        <div class="w3-col m1 l1">
-          <a href="#" class="w3-bar-item w3-button"><img src="/asset/devpost.png" style="width:20px"></i></a>
-        </div>
-        <div class="w3-col m1 l1 ">
-          <a href="#" class="w3-bar-item w3-button"><img src="/asset/hk.png" style="width:20px"></i></a>
-        </div>
-      </div>
-    </div>
-    <!-- <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a> -->
-  </div>
-
+ 
   <!-- Icon Bar (Sidebar - hidden on small screens) -->
   <nav class="w3-sidebar w3-border-right w3-bar-block w3-small w3-hide-small w3-white w3-center" style="padding-top: 1%">
     <!-- Avatar image in top left corner -->
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-hover-green">
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-hover-green w3-round-xxlarge">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>HOME</p>
     </a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding w3-hover-red">
+    <a href="#about" class="w3-bar-item w3-button w3-padding w3-hover-red w3-round-xxlarge">
       <i class="fa fa-user w3-xxlarge"></i>
       <p>ABOUT</p>
     </a>
-    <a href="#photos" class="w3-bar-item w3-button w3-padding w3-hover-yellow">
+    <a href="#photos" class="w3-bar-item w3-button w3-padding w3-hover-yellow w3-round-xxlarge">
       <i class="fa fa-eye w3-xxlarge"></i>
       <p>PORTFOLIO</p>
     </a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding w3-hover-blue">
+    <a href="#contact" class="w3-bar-item w3-button w3-padding w3-hover-blue w3-round-xxlarge">
       <i class="fa fa-envelope w3-xxlarge"></i>
       <p>CONTACT</p>
     </a>
-    <a href="#photos" class="w3-bar-item w3-button w3-padding w3-hover-yellow">
+    <a href="#photos" class="w3-bar-item w3-button w3-padding w3-hover-yellow w3-round-xxlarge">
         <i class="fa fa-eye w3-xxlarge"></i>
         <p>POJECTS</p>
       </a>
@@ -144,6 +110,41 @@
 
   <!-- Page Content -->
   <div class="w3-padding-large" id="main">
+    <div class="container">
+
+        <div class="w3-bar w3-white w3-hide-small w3-row">
+          <div class="w3-container w3-margin-left">
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-yellow w3-circle"><i class="fa fa-github"></i></a>
+            </div>
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-blue w3-circle"><i class="fa fa-linkedin"></i></a>
+            </div>
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-red w3-circle"><i class="fa fa-instagram"></i></a>
+            </div>
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-yellow w3-circle"><i class="fa fa-twitter"></i></a>
+            </div>
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-green w3-circle"><img src="/asset/dev.png" style="width:20px"></i></a>
+            </div>
+            <div class="w3-col m1 l1">
+              <a href="#" class="w3-bar-item w3-button w3-hover-blue w3-circle"><img src="/asset/devpost.png" style="width:20px"></i></a>
+            </div>
+            <div class="w3-col m1 l1 ">
+              <a href="#" class="w3-bar-item w3-button w3-hover-red w3-circle"><img src="/asset/hk.png" style="width:20px"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a> -->
+      </div>
+    
+
+
+
+
+
     <!-- Header/Home -->
     <header class="w3-container w3-center w3-white" style="box-sizing: border-box; height: 100vh; padding-top: 6%;" id="home">
       <div class="w3-row w3-center">
@@ -158,8 +159,8 @@
     </header>
 
     <!-- About Section -->
-    <div class="w3-content w3-justify w3-padding-32 w3-text-grey" id="about">
-      <h2 class="w3-text-dark-grey">About Me</h2>
+    <div class="w3-content w3-justify  w3-text-grey" id="about">
+      <h2 class="w3-text-dark-grey"  style="font-family: Montserrat;">About Me</h2>
       <hr style="width:200px" class="w3-opacity">
       <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -237,14 +238,14 @@
 
 
       <!-- Testimonials -->
-      <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>
+      <!-- <h3 class="w3-padding-24 w3-text-light-grey">My Reputation</h3>
       <img src="/w3images/bandmember.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
       <p><span class="w3-large w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
       <p>John Doe saved us from a web disaster.</p><br>
 
       <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
       <p><span class="w3-large w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
-      <p>No one is better than John Doe.</p>
+      <p>No one is better than John Doe.</p> -->
       <!-- End About Section -->
     </div>
 
